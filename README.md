@@ -10,7 +10,7 @@ In the project directory, you can run:
 ### `npm storybook`
 
 Run the storybook
-Open [http://localhost:9001] to view it in the browser
+Open [http://localhost:9001](http://localhost:9001) to view it in the browser
 
 ### `npm start`
 
