@@ -9,7 +9,8 @@ In the project directory, you can run:
 
 ### `npm storybook`
 
-Run storybook on port 9001
+Run the storybook
+Open [http://localhost:9001] to view it in the browser
 
 ### `npm start`
 
