@@ -1,7 +1,10 @@
 {
-  "name": "frontend",
+  "name": "Typescript-React-Redux-Storybook-Starter",
+  "description": "A starter template for Typescript and React using redux, redux-thunk, storybook and Sass. Bootstrapped with Create React App.",
   "version": "0.1.0",
   "private": true,
+  "author": "Quentin Le Rolland",
+  "keywords": ["redux", "typescript", "react", "redux-thunk", "sass", "storybook"],
   "dependencies": {
     "@types/redux": "^3.6.0",
     "node-sass": "^4.13.0",
