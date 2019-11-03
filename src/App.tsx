@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { AppState } from './store/rootReducer';
+import { userSelectors, userActions } from './store/user';
+import { ThunkDispatch } from './store';
+import { connect } from 'react-redux';
 
-const App: React.FC = () => {
+type AppProps = {
+  userName: string
+  setUser(): void
+}
+
+const App: React.FC<AppProps> = ({setUser, userName}) => {
+
+  useEffect(() => {
+    setUser()
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <span>{userName}</span>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state: AppState) => ({
+  userName: userSelectors.selectUserName(state)
+})
+
+const mapDispatchToProps = (dispatch: ThunkDispatch) => ({
+  setUser: () => dispatch(userActions.setUser())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
